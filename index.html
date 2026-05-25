@@ -4001,7 +4001,7 @@
                 </div>
                 <div>
                     <h3><span class="accent">设计原则</span></h3>
-                    <ul class="feature-list" style="margin-top: var(--element-gap);">
+                    <ul class="feature-list" style="margin-top: var(--element-gap); font-size: var(--body-size);">
                         <li><span class="bold">低侵入接入</span> — 业务侧只标记关键动作，通用采集逻辑由 SDK 承担</li>
                         <li><span class="bold">模块化能力</span> — 页面、点击、耗时等能力按需组合，避免一次性接入过重</li>
                         <li><span class="bold">可靠上报</span> — sendBeacon 优先保障关闭、跳转等场景，XHR 降级兜底；监控面板剔除异常耗时，避免极端值影响分析</li>
@@ -4583,10 +4583,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p style="font-size: var(--small-size); margin-top: 0.75rem;">
-                            前端优先上报原始字段，监控面板统一计算指标，避免不同版本各自计算导致口径不一致。
-                        </p>
-                    </div>
+                                            </div>
                 </div>
                 <div>
                     <h3><span class="accent">建设路线</span></h3>

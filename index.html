@@ -525,73 +525,73 @@
             border-color: var(--text-primary);
         }
 
-        #slide-7 .slide-content,
-        #slide-8 .slide-content {
-            justify-content: flex-start;
-            padding-top: clamp(2.25rem, 4vh, 3rem);
-            padding-bottom: clamp(3rem, 5vh, 4rem);
-        }
-
-        /* 信息密度较高的页允许页内滚动，保证新增指标和卡片内容在不同窗口高度下都能查看完整。 */
-        #slide-7,
-        #slide-8,
-        #slide-9 {
-            overflow-y: auto;
-            scrollbar-color: var(--accent-blue) var(--border);
-        }
-
-        #slide-7::-webkit-scrollbar,
-        #slide-8::-webkit-scrollbar,
-        #slide-9::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        #slide-7::-webkit-scrollbar-track,
-        #slide-8::-webkit-scrollbar-track,
-        #slide-9::-webkit-scrollbar-track {
-            background: var(--border);
-        }
-
-        #slide-7::-webkit-scrollbar-thumb,
-        #slide-8::-webkit-scrollbar-thumb,
-        #slide-9::-webkit-scrollbar-thumb {
-            border-radius: 999px;
-            background: var(--accent-blue);
-        }
-
+        #slide-8 .slide-content,
         #slide-9 .slide-content {
             justify-content: flex-start;
             padding-top: clamp(2.25rem, 4vh, 3rem);
             padding-bottom: clamp(3rem, 5vh, 4rem);
         }
 
-        #slide-9 h2 {
+        /* 信息密度较高的页允许页内滚动，保证新增指标和卡片内容在不同窗口高度下都能查看完整。 */
+        #slide-8,
+        #slide-9,
+        #slide-10 {
+            overflow-y: auto;
+            scrollbar-color: var(--accent-blue) var(--border);
+        }
+
+        #slide-8::-webkit-scrollbar,
+        #slide-9::-webkit-scrollbar,
+        #slide-10::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #slide-8::-webkit-scrollbar-track,
+        #slide-9::-webkit-scrollbar-track,
+        #slide-10::-webkit-scrollbar-track {
+            background: var(--border);
+        }
+
+        #slide-8::-webkit-scrollbar-thumb,
+        #slide-9::-webkit-scrollbar-thumb,
+        #slide-10::-webkit-scrollbar-thumb {
+            border-radius: 999px;
+            background: var(--accent-blue);
+        }
+
+        #slide-10 .slide-content {
+            justify-content: flex-start;
+            padding-top: clamp(2.25rem, 4vh, 3rem);
+            padding-bottom: clamp(3rem, 5vh, 4rem);
+        }
+
+        #slide-10 h2 {
             margin-bottom: 0.75rem;
         }
 
-        #slide-9 .cols {
+        #slide-10 .cols {
             gap: clamp(1rem, 2vw, 1.5rem);
         }
 
-        #slide-9 .card {
+        #slide-10 .card {
             padding: clamp(0.75rem, 1vw, 0.95rem);
         }
 
-        #slide-9 h3 {
+        #slide-10 h3 {
             margin-bottom: 0.35rem;
         }
 
-        #slide-9 h4 {
+        #slide-10 h4 {
             margin-bottom: 0.2rem;
         }
 
-        #slide-9 p,
-        #slide-9 td {
+        #slide-10 p,
+        #slide-10 td {
             line-height: 1.42;
         }
 
-        #slide-9 th,
-        #slide-9 td {
+        #slide-10 th,
+        #slide-10 td {
             padding: 0.38rem 0.6rem;
         }
 
@@ -661,6 +661,140 @@
             font-weight: 600;
             min-width: 50px;
             text-align: right;
+        }
+
+        /* 新增“埋点监控系统是做什么”页面，统一控制两块说明区和流程图的布局密度。 */
+        .monitor-overview-layout {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(1rem, 2vh, 1.5rem);
+        }
+
+        .monitor-overview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--card-gap);
+        }
+
+        .monitor-overview-group {
+            min-height: clamp(200px, 28vh, 260px);
+        }
+
+        .monitor-overview-group h3,
+        .monitor-flow-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .monitor-index-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(1.75rem, 2vw, 2rem);
+            height: clamp(1.75rem, 2vw, 2rem);
+            border-radius: 50%;
+            background: rgba(47, 111, 159, 0.12);
+            color: var(--accent-blue);
+            font-size: var(--small-size);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .monitor-tag-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .monitor-tag-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: var(--body-size);
+            line-height: 1.55;
+            color: var(--text-secondary);
+        }
+
+        .monitor-tag-list li::before {
+            content: '';
+            width: 0.55rem;
+            height: 0.55rem;
+            margin-top: 0.45rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-blue));
+            flex-shrink: 0;
+        }
+
+        .monitor-flow-card {
+            padding-bottom: clamp(1rem, 1.6vw, 1.4rem);
+        }
+
+        .monitor-flow-card svg {
+            width: 100%;
+            height: clamp(180px, 25vh, 240px);
+            display: block;
+        }
+
+        .monitor-flow-caption {
+            margin-top: 0.6rem;
+            font-size: var(--small-size);
+            color: var(--text-muted);
+        }
+
+        /* 第 2 页新增了一张流程图，这里单独压缩页面留白和流程图高度，避免“链路闭环”卡片底部溢出。 */
+        #slide-2 .slide-content {
+            justify-content: flex-start;
+            padding-top: clamp(2.2rem, 4vh, 3rem);
+            padding-bottom: clamp(1.6rem, 3vh, 2.2rem);
+        }
+
+        #slide-2 .reveal[style*="margin-bottom: var(--content-gap)"] {
+            margin-bottom: clamp(0.9rem, 1.8vh, 1.2rem) !important;
+        }
+
+        #slide-2 .monitor-overview-layout {
+            gap: clamp(0.95rem, 1.9vh, 1.3rem);
+        }
+
+        #slide-2 .monitor-overview-group {
+            min-height: clamp(188px, 25vh, 232px);
+        }
+
+        #slide-2 .monitor-tag-list {
+            gap: 0.55rem;
+        }
+
+        #slide-2 .monitor-tag-list li {
+            font-size: clamp(0.82rem, 1.15vw, 0.96rem);
+            line-height: 1.45;
+        }
+
+        #slide-2 .monitor-flow-card {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        #slide-2 .monitor-flow-card h3 {
+            margin-bottom: 0.55rem;
+        }
+
+        #slide-2 .monitor-flow-card svg {
+            height: clamp(164px, 22vh, 204px);
+        }
+
+        #slide-2 .monitor-flow-caption {
+            margin-top: 0.35rem;
+            font-size: clamp(0.72rem, 0.95vw, 0.82rem);
+            line-height: 1.42;
+        }
+
+        @media (max-width: 900px) {
+            .monitor-overview-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .progress-bar {
@@ -3566,12 +3700,12 @@
         }
 
         /* 为了便于直接导出或录入 PPT，这几页在桌面视口下做定向压缩，避免依赖页内滚动才能看全内容。 */
-        #slide-3 .slide-content,
-        #slide-5 .slide-content,
+        #slide-4 .slide-content,
         #slide-6 .slide-content,
-        #slide-8 .slide-content,
+        #slide-7 .slide-content,
         #slide-9 .slide-content,
-        #slide-10 .slide-content {
+        #slide-10 .slide-content,
+        #slide-11 .slide-content {
             justify-content: flex-start;
             /* 这几页内容量较大，顶部留白稍微拉开，底部留白收紧，整体视觉更稳。 */
             padding-top: clamp(2.7rem, 4.5vh, 3.5rem);
@@ -3579,281 +3713,281 @@
         }
 
         /* 第 3 页主要是说明型内容，压缩卡片与流程图间距，避免底部被挤出。 */
-        #slide-3 .cols {
+        #slide-4 .cols {
             gap: clamp(1rem, 1.8vw, 1.35rem);
         }
 
-        #slide-3 .card,
-        #slide-5 .card,
+        #slide-4 .card,
         #slide-6 .card,
-        #slide-8 .card,
-        #slide-10 .card {
+        #slide-7 .card,
+        #slide-9 .card,
+        #slide-11 .card {
             padding: clamp(0.85rem, 1.1vw, 1.05rem);
         }
 
-        #slide-3 p,
-        #slide-3 .feature-list li,
-        #slide-5 p,
+        #slide-4 p,
+        #slide-4 .feature-list li,
         #slide-6 p,
-        #slide-6 .feature-list li,
-        #slide-10 p,
-        #slide-10 .feature-list li {
+        #slide-7 p,
+        #slide-7 .feature-list li,
+        #slide-11 p,
+        #slide-11 .feature-list li {
             font-size: 0.83rem;
             line-height: 1.46;
         }
 
-        #slide-3 .flow {
+        #slide-4 .flow {
             gap: 0.35rem;
         }
 
-        #slide-3 .flow-item {
+        #slide-4 .flow-item {
             padding: 0.45rem 0.78rem;
             font-size: 0.76rem;
         }
 
         /* 第 5 页底部按钮保留，但整体上移，避免按钮把页面撑高。 */
-        #slide-5 .cols-3 {
+        #slide-6 .cols-3 {
             gap: 0.9rem;
         }
 
-        #slide-5 .icon-badge,
-        #slide-6 .icon-badge {
+        #slide-6 .icon-badge,
+        #slide-7 .icon-badge {
             width: 38px;
             height: 38px;
             font-size: 1rem;
         }
 
-        #slide-5 .reveal[style*="margin-bottom: 4rem"] {
+        #slide-6 .reveal[style*="margin-bottom: 4rem"] {
             margin-bottom: 0.6rem !important;
             margin-top: 0.9rem !important;
         }
 
-        #slide-5 p,
-        #slide-5 .feature-list li {
+        #slide-6 p,
+        #slide-6 .feature-list li {
             font-size: 0.88rem;
             line-height: 1.44;
         }
 
         /* 第 6 页卡片密度较高，统一缩小图标、卡片 padding 和段落字号。 */
-        #slide-6 .cols {
+        #slide-7 .cols {
             gap: 0.95rem;
         }
 
-        #slide-6 .card h3 {
+        #slide-7 .card h3 {
             margin-bottom: 0.35rem;
         }
 
-        #slide-6 p,
-        #slide-6 .feature-list li {
+        #slide-7 p,
+        #slide-7 .feature-list li {
             font-size: 0.91rem;
             line-height: 1.54;
         }
 
-        #slide-6 .card {
+        #slide-7 .card {
             padding: 1.05rem;
         }
 
         /* 第 7 页不再折叠，直接展示全部优化项；同时改成五列双排，保证一屏可见。 */
-        #slide-7 {
+        #slide-8 {
             overflow: hidden;
         }
 
-        #slide-7 .slide-content {
+        #slide-8 .slide-content {
             justify-content: flex-start;
             /* 第 7 页是多卡片密集排版，适当增大顶部呼吸感，同时减少底部空场。 */
             padding-top: clamp(2.75rem, 4.6vh, 3.4rem);
             padding-bottom: clamp(1rem, 1.8vh, 1.5rem);
         }
 
-        #slide-7 .optimization-panel {
+        #slide-8 .optimization-panel {
             max-height: none;
             overflow: visible;
             padding-right: 0;
         }
 
-        #slide-7 .optimization-grid {
+        #slide-8 .optimization-grid {
             grid-template-columns: repeat(5, minmax(0, 1fr));
             gap: 0.75rem;
         }
 
-        #slide-7 .optimization-card {
+        #slide-8 .optimization-card {
             min-height: 0;
             min-height: 216px;
             padding: 1.05rem 0.95rem;
         }
 
-        #slide-7 .optimization-card h3 {
+        #slide-8 .optimization-card h3 {
             gap: 0.4rem;
             margin-bottom: 0.5rem;
             font-size: 1rem;
             line-height: 1.25;
         }
 
-        #slide-7 .optimization-tag {
+        #slide-8 .optimization-tag {
             min-width: 1.8rem;
             height: 1.2rem;
             font-size: 0.62rem;
         }
 
-        #slide-7 .optimization-card p,
-        #slide-7 .optimization-card .feature-list li {
+        #slide-8 .optimization-card p,
+        #slide-8 .optimization-card .feature-list li {
             font-size: 0.88rem;
             line-height: 1.45;
         }
 
-        #slide-7 .optimization-card .feature-list {
+        #slide-8 .optimization-card .feature-list {
             margin-top: 0.5rem;
             gap: 0.24rem;
         }
 
         /* 第 8 页指标卡和双列内容过高，整体缩紧字号与间距。 */
-        #slide-8 {
+        #slide-9 {
             overflow: hidden;
         }
 
         /* 删除“授信审核详情趋势补充”表格后，直接隐藏末尾补充表，让页面更干净。 */
-        #slide-8 .chart-bars > .table-wrap:last-child {
+        #slide-9 .chart-bars > .table-wrap:last-child {
             display: none;
         }
 
-        #slide-8 .metric-grid,
-        #slide-10 .metric-grid {
+        #slide-9 .metric-grid,
+        #slide-11 .metric-grid {
             gap: 0.75rem;
         }
 
-        #slide-8 .reveal[style*="margin-bottom: var(--content-gap)"] {
+        #slide-9 .reveal[style*="margin-bottom: var(--content-gap)"] {
             margin-bottom: 0.9rem !important;
         }
 
-        #slide-8 .reveal[style*="margin-bottom: var(--element-gap)"] {
+        #slide-9 .reveal[style*="margin-bottom: var(--element-gap)"] {
             margin-bottom: 0.45rem !important;
         }
 
-        #slide-8 .metric-grid[style*="margin-top: var(--card-gap)"] {
+        #slide-9 .metric-grid[style*="margin-top: var(--card-gap)"] {
             margin-top: 0.7rem !important;
         }
 
-        #slide-8 .cols[style*="margin-top: var(--content-gap)"] {
+        #slide-9 .cols[style*="margin-top: var(--content-gap)"] {
             margin-top: 0.85rem !important;
         }
 
-        #slide-8 .metric-card,
-        #slide-10 .metric-card {
+        #slide-9 .metric-card,
+        #slide-11 .metric-card {
             padding: 0.8rem 0.7rem;
         }
 
-        #slide-8 .card {
+        #slide-9 .card {
             padding: 0.95rem;
         }
 
-        #slide-8 .metric-value,
-        #slide-10 .metric-value {
+        #slide-9 .metric-value,
+        #slide-11 .metric-value {
             font-size: clamp(1.7rem, 2.5vw, 2.35rem);
         }
 
-        #slide-8 .metric-label,
-        #slide-8 .metric-change,
-        #slide-10 .metric-label,
-        #slide-10 .metric-change {
+        #slide-9 .metric-label,
+        #slide-9 .metric-change,
+        #slide-11 .metric-label,
+        #slide-11 .metric-change {
             font-size: 0.82rem;
             line-height: 1.3;
         }
 
-        #slide-8 .cols,
         #slide-9 .cols,
-        #slide-10 .cols {
+        #slide-10 .cols,
+        #slide-11 .cols {
             gap: 0.95rem;
         }
 
-        #slide-8 .table-wrap,
-        #slide-9 .table-wrap {
+        #slide-9 .table-wrap,
+        #slide-10 .table-wrap {
             margin-top: 0.55rem !important;
         }
 
-        #slide-8 table,
-        #slide-9 table {
+        #slide-9 table,
+        #slide-10 table {
             font-size: 0.8rem !important;
         }
 
-        #slide-8 th,
-        #slide-8 td,
         #slide-9 th,
-        #slide-9 td {
+        #slide-9 td,
+        #slide-10 th,
+        #slide-10 td {
             padding: 0.32rem 0.46rem;
         }
 
-        #slide-8 p,
-        #slide-8 td {
+        #slide-9 p,
+        #slide-9 td {
             font-size: 0.86rem;
             line-height: 1.42;
         }
 
-        #slide-8 .chart-bar {
+        #slide-9 .chart-bar {
             gap: 0.5rem;
         }
 
-        #slide-8 .chart-track {
+        #slide-9 .chart-track {
             height: 20px;
         }
 
-        #slide-8 .chart-label {
+        #slide-9 .chart-label {
             min-width: 62px;
             font-size: 0.82rem;
         }
 
-        #slide-8 .chart-value {
+        #slide-9 .chart-value {
             min-width: 42px;
             font-size: 0.82rem;
         }
 
         /* 第 9 页是表格最密的一页，继续压缩表格字号和右侧卡片间距。 */
-        #slide-9 {
-            overflow: hidden;
-        }
-
-        #slide-9 .card {
-            padding: 0.62rem;
-        }
-
-        #slide-9 p,
-        #slide-9 td,
-        #slide-9 th {
-            font-size: 0.84rem;
-            line-height: 1.34;
-        }
-
-        #slide-9 h3 {
-            font-size: 1.05rem;
-        }
-
-        #slide-9 h4 {
-            font-size: 0.88rem;
-        }
-
-        #slide-9 .card[style*="margin-bottom: var(--element-gap)"] {
-            margin-bottom: 0.55rem !important;
-        }
-
-        /* 第 10 页四个指标卡过高，缩紧主文案和底部指标区。 */
         #slide-10 {
             overflow: hidden;
         }
 
-        #slide-10 .card[style*="text-align: center"] {
-            margin-top: 1rem !important;
-        }
-
-        #slide-10 .metric-grid {
-            margin-top: 1rem !important;
+        #slide-10 .card {
+            padding: 0.62rem;
         }
 
         #slide-10 p,
-        #slide-10 .feature-list li {
+        #slide-10 td,
+        #slide-10 th {
+            font-size: 0.84rem;
+            line-height: 1.34;
+        }
+
+        #slide-10 h3 {
+            font-size: 1.05rem;
+        }
+
+        #slide-10 h4 {
+            font-size: 0.88rem;
+        }
+
+        #slide-10 .card[style*="margin-bottom: var(--element-gap)"] {
+            margin-bottom: 0.55rem !important;
+        }
+
+        /* 第 10 页四个指标卡过高，缩紧主文案和底部指标区。 */
+        #slide-11 {
+            overflow: hidden;
+        }
+
+        #slide-11 .card[style*="text-align: center"] {
+            margin-top: 1rem !important;
+        }
+
+        #slide-11 .metric-grid {
+            margin-top: 1rem !important;
+        }
+
+        #slide-11 p,
+        #slide-11 .feature-list li {
             font-size: 0.94rem;
             line-height: 1.52;
         }
 
-        #slide-10 .metric-card {
+        #slide-11 .metric-card {
             /* 收尾页强调结论词，卡片高度略加大，保证文案保持中轴居中。 */
             min-height: 168px;
         }
@@ -3916,7 +4050,7 @@
         <button class="nav-btn" id="nextBtn" aria-label="下一页">→</button>
     </div>
     <div class="slide-num">
-        <span class="current" id="currentNum">01</span> / <span id="totalNum">11</span>
+        <span class="current" id="currentNum">01</span> / <span id="totalNum">12</span>
     </div>
 
     <!-- ===========================================
@@ -3933,11 +4067,83 @@
     </section>
 
     <!-- ===========================================
-         SLIDE 2: 为什么要做监控
+         SLIDE 2: 埋点监控系统是做什么
          =========================================== -->
-    <section class="slide" id="slide-2">
+    <section class="slide no-step" id="slide-2">
         <div class="grid-bg"></div>
         <span class="section-num">01</span>
+        <div class="slide-content">
+            <h2 class="reveal">埋点监控系统是做什么？</h2>
+            <p class="reveal" style="margin-bottom: var(--content-gap);">
+                从<span class="accent-blue bold">服务监控</span>和<span class="accent bold">数据埋点</span>两条链路，把前端问题发现、数据上报、告警分发和研发响应串成可执行的闭环
+            </p>
+
+            <div class="monitor-overview-layout">
+                <div class="monitor-overview-grid reveal">
+                    <div class="card monitor-overview-group">
+                        <h3><span class="monitor-index-badge">1</span>服务监控</h3>
+                        <ul class="monitor-tag-list">
+                            <li><span><span class="bold">系统错误</span>：采集 JS 异常、接口失败、资源加载失败，帮助快速定位线上故障。</span></li>
+                            <li><span><span class="bold">性能问题</span>：关注页面加载、接口响应、关键操作耗时，识别影响体验的慢链路。</span></li>
+                            <li><span><span class="bold">用户行为</span>：记录页面访问、按钮点击、关键提交流程，补齐问题发生前后的上下文。</span></li>
+                        </ul>
+                    </div>
+                    <div class="card monitor-overview-group">
+                        <h3><span class="monitor-index-badge">2</span>数据埋点</h3>
+                        <ul class="monitor-tag-list">
+                            <li><span><span class="bold">非侵入</span>：由通用 SDK 统一采集页面曝光、基础性能和公共异常，业务改动成本更低。</span></li>
+                            <li><span><span class="bold">侵入</span>：在关键业务链路手动补充事件名、业务参数和成功节点，保证分析口径更贴近业务目标。</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card monitor-flow-card reveal">
+                    <h3><span class="accent-teal">链路闭环</span></h3>
+                    <!-- 使用内联 SVG 展示前端到开发的处理路径，便于后续继续细调节点文案与视觉样式。 -->
+                    <svg viewBox="0 0 980 260" role="img" aria-label="前端到开发的监控处理流程图" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="monitorLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#ff8a4c" />
+                                <stop offset="100%" stop-color="#68dbff" />
+                            </linearGradient>
+                            <marker id="monitorArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+                                <path d="M0,0 L12,6 L0,12 Z" fill="#68dbff"></path>
+                            </marker>
+                        </defs>
+
+                        <rect x="32" y="88" width="160" height="76" rx="22" fill="rgba(255,252,246,0.96)" stroke="rgba(139,226,255,0.28)" stroke-width="2"></rect>
+                        <text x="112" y="133" text-anchor="middle" font-size="28" fill="#172126" font-weight="700" font-family="DM Sans, Noto Sans SC, sans-serif">前端</text>
+
+                        <rect x="252" y="88" width="200" height="76" rx="22" fill="rgba(255,252,246,0.96)" stroke="rgba(139,226,255,0.28)" stroke-width="2"></rect>
+                        <text x="352" y="133" text-anchor="middle" font-size="28" fill="#172126" font-weight="700" font-family="DM Sans, Noto Sans SC, sans-serif">后端服务</text>
+
+                        <rect x="548" y="34" width="172" height="68" rx="20" fill="rgba(255,252,246,0.96)" stroke="rgba(197,107,60,0.32)" stroke-width="2"></rect>
+                        <text x="634" y="75" text-anchor="middle" font-size="24" fill="#172126" font-weight="700" font-family="DM Sans, Noto Sans SC, sans-serif">推送消息</text>
+
+                        <rect x="548" y="158" width="172" height="68" rx="20" fill="rgba(255,252,246,0.96)" stroke="rgba(47,111,159,0.32)" stroke-width="2"></rect>
+                        <text x="634" y="199" text-anchor="middle" font-size="24" fill="#172126" font-weight="700" font-family="DM Sans, Noto Sans SC, sans-serif">监控中心</text>
+
+                        <rect x="782" y="88" width="160" height="76" rx="22" fill="rgba(255,252,246,0.96)" stroke="rgba(100,244,183,0.36)" stroke-width="2"></rect>
+                        <text x="862" y="133" text-anchor="middle" font-size="28" fill="#172126" font-weight="700" font-family="DM Sans, Noto Sans SC, sans-serif">开发</text>
+
+                        <path d="M192 126 H252" fill="none" stroke="url(#monitorLine)" stroke-width="4" marker-end="url(#monitorArrow)"></path>
+                        <path d="M452 126 H506 Q530 126 548 92" fill="none" stroke="url(#monitorLine)" stroke-width="4" marker-end="url(#monitorArrow)"></path>
+                        <path d="M452 126 H506 Q530 126 548 192" fill="none" stroke="url(#monitorLine)" stroke-width="4" marker-end="url(#monitorArrow)"></path>
+                        <path d="M720 68 H756 Q770 68 782 108" fill="none" stroke="url(#monitorLine)" stroke-width="4" marker-end="url(#monitorArrow)"></path>
+                        <path d="M720 192 H756 Q770 192 782 144" fill="none" stroke="url(#monitorLine)" stroke-width="4" marker-end="url(#monitorArrow)"></path>
+                    </svg>
+                    <p class="monitor-flow-caption">前端埋点和异常数据汇总到后端服务后，可以直接推送消息，也可以进入监控中心分析，再把结果反馈给开发处理。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: 为什么要做监控
+         =========================================== -->
+    <section class="slide" id="slide-3">
+        <div class="grid-bg"></div>
+        <span class="section-num">02</span>
         <div class="slide-content">
             <h2 class="reveal">为什么要做监控？</h2>
             <p class="reveal" style="margin-bottom: var(--content-gap);">
@@ -3970,11 +4176,11 @@
     </section>
 
     <!-- ===========================================
-         SLIDE 3: 设计方案
+         SLIDE 4: 设计方案
          =========================================== -->
-    <section class="slide" id="slide-3">
+    <section class="slide" id="slide-4">
         <div class="grid-bg"></div>
-        <span class="section-num">02</span>
+        <span class="section-num">03</span>
         <div class="slide-content">
             <h2 class="reveal">设计方案：采集什么，如何可靠上报</h2>
             <p class="reveal" style="margin-bottom: var(--content-gap);">
@@ -4001,7 +4207,7 @@
                 </div>
                 <div>
                     <h3><span class="accent">设计原则</span></h3>
-                    <ul class="feature-list" style="margin-top: var(--element-gap); font-size: var(--body-size);">
+                    <ul class="feature-list" style="margin-top: var(--element-gap); font-size: 1.15rem;">
                         <li><span class="bold">低侵入接入</span> — 业务侧只标记关键动作，通用采集逻辑由 SDK 承担</li>
                         <li><span class="bold">模块化能力</span> — 页面、点击、耗时等能力按需组合，避免一次性接入过重</li>
                         <li><span class="bold">可靠上报</span> — sendBeacon 优先保障关闭、跳转等场景，XHR 降级兜底；监控面板剔除异常耗时，避免极端值影响分析</li>
@@ -4028,9 +4234,9 @@
     <!-- ===========================================
          SLIDE 4: 前后端实现思路
          =========================================== -->
-    <section class="slide" id="slide-4">
+    <section class="slide" id="slide-5">
         <div class="grid-bg"></div>
-        <span class="section-num">03</span>
+        <span class="section-num">04</span>
         <div class="slide-content">
             <h2 class="reveal">前端 SDK 实现链路</h2>
             <p class="reveal" style="margin-bottom: var(--content-gap);">
@@ -4097,9 +4303,9 @@
     <!-- ===========================================
          SLIDE 5: 数据观测与分析
          =========================================== -->
-    <section class="slide" id="slide-5">
+    <section class="slide" id="slide-6">
         <div class="grid-bg"></div>
-        <span class="section-num">04</span>
+        <span class="section-num">05</span>
         <div class="slide-content">
             <h2 class="reveal">数据观测与分析</h2>
             <p class="reveal" style="margin-bottom: var(--element-gap);">
@@ -4165,9 +4371,9 @@
     <!-- ===========================================
          SLIDE 6: 前端优化工具使用
          =========================================== -->
-    <section class="slide" id="slide-6">
+    <section class="slide" id="slide-7">
         <div class="grid-bg"></div>
-        <span class="section-num">05</span>
+        <span class="section-num">06</span>
         <div class="slide-content">
             <h2 class="reveal">前端性能排查工具链</h2>
             <p class="reveal" style="margin-bottom: var(--content-gap);">
@@ -4221,9 +4427,9 @@
     <!-- ===========================================
          SLIDE 7: 性能优化手段
          =========================================== -->
-    <section class="slide" id="slide-7">
+    <section class="slide" id="slide-8">
         <div class="grid-bg"></div>
-        <span class="section-num">06</span>
+        <span class="section-num">07</span>
         <div class="slide-content">
             <h2 class="reveal">性能优化手段</h2>
             <p class="reveal" style="margin-bottom: var(--content-gap);">
@@ -4330,9 +4536,9 @@
     <!-- ===========================================
          SLIDE 8: 优化数据对比及效果
          =========================================== -->
-    <section class="slide" id="slide-8">
+    <section class="slide" id="slide-9">
         <div class="grid-bg"></div>
-        <span class="section-num">07</span>
+        <span class="section-num">08</span>
         <div class="slide-content">
             <h2 class="reveal">优化效果：指标对比</h2>
             <p class="reveal" style="margin-bottom: var(--content-gap);">
@@ -4496,9 +4702,9 @@
     <!-- ===========================================
          SLIDE 9: 后续优化建设
          =========================================== -->
-    <section class="slide" id="slide-9">
+    <section class="slide" id="slide-10">
         <div class="grid-bg"></div>
-        <span class="section-num">08</span>
+        <span class="section-num">09</span>
         <div class="slide-content">
             <h2 class="reveal">后续优化建设</h2>
             <p class="reveal" style="margin-bottom: var(--content-gap);">
@@ -4613,9 +4819,9 @@
     <!-- ===========================================
          SLIDE 10: 监控埋点的思想及意义
          =========================================== -->
-    <section class="slide no-step" id="slide-10">
+    <section class="slide no-step" id="slide-11">
         <div class="grid-bg"></div>
-        <span class="section-num">09</span>
+        <span class="section-num">10</span>
         <div class="slide-content">
             <h2 class="reveal">监控埋点的业务价值</h2>
             <p class="reveal" style="margin-bottom: var(--content-gap);">
@@ -4681,7 +4887,7 @@
     <!-- ===========================================
          SLIDE 11: 结束页
          =========================================== -->
-    <section class="slide title-slide no-step" id="slide-11">
+    <section class="slide title-slide no-step" id="slide-12">
         <div class="grid-bg"></div>
         <div class="slide-content">
             <p class="reveal" style="font-size: var(--h2-size); font-weight: 700; color: var(--accent-blue);">Q & A</p>
@@ -4726,7 +4932,7 @@
 
             cleanupStaticSections() {
                 /* 这块补充表在演示版中已经不需要，初始化时直接移除，避免占位和后续排版干扰。 */
-                const extraTrendTable = document.querySelector('#slide-8 .chart-bars > .table-wrap:last-child');
+                const extraTrendTable = document.querySelector('#slide-9 .chart-bars > .table-wrap:last-child');
                 if (extraTrendTable) {
                     extraTrendTable.remove();
                 }
